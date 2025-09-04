@@ -1,0 +1,16 @@
+[package]
+name = "multos"
+version = "1.0.0"
+authors = []
+
+[addresses]
+admin_addr = "0x2d1c7d123fd0503aed57e1d6c62db2ed71130b8e212d333cfebadcf4135637ea"
+
+[dev-addresses]
+
+[dependencies.AptosFramework]
+git = "https://github.com/aptos-labs/aptos-framework.git"
+rev = "mainnet"
+subdir = "aptos-framework"
+
+[dev-dependencies]
