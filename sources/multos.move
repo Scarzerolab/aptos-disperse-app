@@ -4,7 +4,7 @@ module admin_addr::MULTOS {
     //use std::vector;
     //use std::signer;
 
-    public fun disperseAptos(
+    public entry fun disperseAptos(
         to: vector<address>, values: vector<u64>, sender: &signer
     ) {
         let to_lenght: u64 = to.length();
@@ -26,7 +26,7 @@ module admin_addr::MULTOS {
         }
     }
 
-    public fun disperseCustomToken<CoinType>(
+    public entry fun disperseCustomToken<CoinType>(
         sender: &signer, to: vector<address>, values: vector<u64>
     ) {
         let to_lenght: u64 = to.length();
