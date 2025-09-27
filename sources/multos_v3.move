@@ -1,4 +1,4 @@
-module admin_addr::MULTOS_V2 {
+module admin_addr::MULTOS_V3 {
     use 0x1::coin::transfer;
     use 0x1::aptos_coin::AptosCoin;
     use 0x1::primary_fungible_store;
@@ -28,5 +28,25 @@ module admin_addr::MULTOS_V2 {
         }
     }
 
-    
+    public entry fun disperseCustomToken(
+        sender: &signer, asset_metadata: Object<Metadata>, to: vector<address>, values: vector<u64>
+    ) {
+        let to_lenght: u64 = to.length();
+        let amount_lenght: u64 = values.length();
+
+        assert!(to_lenght == amount_lenght, 42);
+        assert!(to_lenght > 0, 42);
+
+        let i: u64 = 0;
+        while (i < to_lenght) {
+            let recipient: address = to[i];
+            let amount: u64 = values[i];
+
+            if (amount > 0) {
+                primary_fungible_store::transfer(sender, asset_metadata, recipient, amount);
+            };
+
+            i += 1;
+        }
+    }
 }
