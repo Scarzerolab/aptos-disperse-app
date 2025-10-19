@@ -19,3 +19,7 @@ This public entry function allows you to send Aptos Coins to a list of recipient
     - `sender: &signer`: The account executing the transaction and providing the funds
     - `to: vector<address>`: A vector of recipient addresses
     - `values: vector<u64>`: A vector of u64 values representing the amount of APT to send to each corresponding recipient.
+- Behaviors:
+    - It checks that the `to` and `values` vectors have the same length and are not empty
+    - It iterates through the lists, transferring the specified amount of APT to each recipient.
+    - Transfer of `0` APT are skipped
