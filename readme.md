@@ -23,3 +23,6 @@ This public entry function allows you to send Aptos Coins to a list of recipient
     - It checks that the `to` and `values` vectors have the same length and are not empty
     - It iterates through the lists, transferring the specified amount of APT to each recipient.
     - Transfer of `0` APT are skipped
+
+### 2. disperseCustomToken:
+This public entry function allows you to send a custom fungible token to a list of recipients.
