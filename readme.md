@@ -26,3 +26,6 @@ This public entry function allows you to send Aptos Coins to a list of recipient
 
 ### 2. disperseCustomToken:
 This public entry function allows you to send a custom fungible token to a list of recipients.
+
+- parameters:
+    - `sender: &signer`: The account executing the transaction and providing the funds.
