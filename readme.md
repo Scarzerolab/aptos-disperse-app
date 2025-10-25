@@ -29,3 +29,4 @@ This public entry function allows you to send a custom fungible token to a list 
 
 - parameters:
     - `sender: &signer`: The account executing the transaction and providing the funds.
+    - `asset_metadata: Object<Metadata>`: he object reference for the custom fungible token. This is used to identify the specific token to be dispersed.
